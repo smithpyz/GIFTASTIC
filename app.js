@@ -1,25 +1,25 @@
+
+
 $("button").on("click", function() {
-    var cartoon = $("cartoonImage").attr("data-cartoon");
-    var topics = ['my-little-pony', 'casper', 'yogi-bear'];
-    console.log(0);
+    var cartoon = $(this).attr("data-cartoon");
+
+    // var topics = ['my-little-pony', 'casper', 'yogi-bear'];
+    // console.log(0);
     
-    var queryURL = "https://api.giphy.com/v1/gifs/search?q="
-    + cartoon + topics + "&api_key=sQJ9QXwFofx9uPc5ddV0AA7qpJejXuEX&limit=10";
+    var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + cartoon + "&api_key=sQJ9QXwFofx9uPc5ddV0AA7qpJejXuEX&limit=10";
 
         $.ajax({
           url: queryURL,
           method: "GET"
-
         })
           // After data comes back from the request
         .then(function(response) {
-            console.log(queryURL);
-  
-            // storing the data from the AJAX request in the topics variable
-            var topics = response.data;
-  
+            var results = response.data;
+
             // Looping through each result item
-            for (var i = 0; i < topics.length; i++) {
+            for (var i = 0; i < results.length; i++) {
+
+              if (results[i].data-state === "_s")
   
               // Creating and storing a div tag
               var cartoonDiv = $("<div>");
