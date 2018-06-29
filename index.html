@@ -7,14 +7,22 @@
 </head>
 
 <body>
-    <button data-cartoon="My Little Pony">My Little Pony</button>
-    <button data-cartoon="Casper">Casper</button>
-    <button data-cartoon="Yogi">Yogi Bear</button>
+  <div id="cartoons-view"></div>
+  <div id="buttons-view">
+    <button data-cartoon="My-Little-Pony">PONY</button>
+    <button data-cartoon="Casper">CASPER</button>
+    <button data-cartoon="Yogi-Bear">BEAR</button>
+  </div>
+  <div id="gifs-appear-here"></div>
 
-    <div id="gifs-appear-here"></div>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="app.js"></script>
+  <form id="cartoon-form">
+    <label for="cartoon-input">Add your Favorite Cartoon</label>
+    <input type="text" id="cartoon-input">
+    <br>
+    <input id="add-cartoon" type="submit" value="Add your Favorite Cartoon">
+  </form>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="app.js"></script>
 </body>
 
 </html>
